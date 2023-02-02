@@ -1,14 +1,15 @@
-<!DOCTYPE html>
 <!-- "load staticfiles" didnt work as it wasnt one of the present libs to I just used static
         It works the exact same way -->
+{% extends 'rango/base.html' %}
 {% load static %}
 
-<html>
-    <head>
-        <title>Rango</title>
-    </head>
-    <body>
-        <h1>Rango says..</h1>
+{% block title_block %}
+    Homepage
+{% endblock %}
+
+{% block body_block %}
+
+    <h1>Rango says..</h1>
         <div>
             hey there partner! <br />
             <strong>{{ boldmessage }}</strong><br />
@@ -45,10 +46,7 @@
         </div>
 
         <div>
-            <a href="{% url 'rango:about' %}">About</a><br />
-            <a href="/rango/add_category/">Add a New Category</a><br />
             <img src="{% static 'images/rango.jpg' %}"
-                 alt="Picture of Rango" /> <!-- New Line -->
+                 alt="Picture of Rango" />
         </div>
-    </body>
-</html>
+{% endblock %}
